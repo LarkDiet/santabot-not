@@ -1,0 +1,58 @@
+! version = 2.0
+! local concat = newline
+
+> topic asked_name
+
+  + *
+  - <set name=<formal>>Nice to meet you, <get name>!
+  ^  How old are you?{topic=asked_age}
+
+< topic
+
+> topic asked_age
+
+  + *
+  - <set age=<star>>Ah, I remember when I was <get age>!
+  ^  What would you like for Christmas this year?{topic=asked_gift}
+
+< topic
+
+> topic asked_gift
+
+  + *
+  - <set gift=<formal>>Hoho, I hear that's all the rage with you youngns!
+  ^  And have you been a good kid this year?{topic=asked_if_good}
+
+< topic
+
+> topic asked_if_good
+
+  + *
+  - Come on, don't be shy with Santa!
+  - Honesty is the best policy!
+  - Come again?
+  
+  + yes
+  - Great to hear! I'll make sure to get you that <get gift>, little <get name>.{topic=random}
+  
+  + no
+  - Oh, you've been naughty, eh?
+  ^  I suppose you'll be getting coal this year, <get name>.
+
+< topic
+
++ hello
+- Hello there!
+
++ hello bot
+- I'm not a robot, I'm Santa Claus!
+
++ merry christmas [*]
+- Hohoho, Merry Christmas to you, too!
+
++ happy holidays [*]
+- Hohoho, happy holidays to you, too!
+
++ *
+- I don't know what to say to that!
+- That's very interesting!

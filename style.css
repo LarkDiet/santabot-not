@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-image: url("bg.jpg");
+	background-repeat: repeat; 
+}
+
+.chattext {
+	font-size: 12px;
+	font-family: Verdana, Arial;
+}
+
+#youtext {
+	color: #FF0000;
+}
+
+#bottext {
+	color: #000000;
+}
